@@ -1,11 +1,11 @@
 {
   "name": "ver-sre",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx rimraf sitespeed-result && npx sitespeed.io --multi src/test.js --n 1 -b chrome"
+    "start": "npx rimraf sitespeed-result && npx sitespeed.io --spa --multi src/test.js --n 1 -b  chrome --browsertime.pageCompleteCheck 'return (function() {try { return document.readyState !=='loading'} catch(e) {} return true;})()'"
   },
   "author": "anil verma",
   "license": "ISC",
